@@ -28,10 +28,7 @@ class _pieChartState extends State<pieChart> {
                 value: 90,
                 color: Colors.redAccent,
               ),
-              PieChartSectionData(
-                value: 50,
-                color: Colors.greenAccent,
-              ),
+
               PieChartSectionData(
                 value: 65,
                 color: Colors.brown,

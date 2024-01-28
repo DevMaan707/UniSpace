@@ -142,10 +142,10 @@ class _HomepageState extends State<Homepage> {
             child: Row(
               children: List.generate(
                 3,
-                (index) => const Padding(
+                (index) => Padding(
                   padding:
                       EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 18),
-                  child: feedHomebadge(),
+                  child: feedHomebadge(index:index),
                 ),
               ),
             ),
@@ -174,10 +174,10 @@ class _HomepageState extends State<Homepage> {
             child: Row(
               children: List.generate(
                 3,
-                (index) => const Padding(
+                (index) => Padding(
                   padding:
                       EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 18),
-                  child: announcements(),
+                  child: announcements(index:index),
                 ),
               ),
             ),
@@ -204,27 +204,65 @@ class _HomepageState extends State<Homepage> {
                   ],
                 ),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      width: 120,
+
                       height: 40,
                       decoration: Utils.decoration,
+                      child:Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left:8.0,right: 2),
+                            child: CircleAvatar(radius: 6.5,backgroundColor: Colors.redAccent,),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right:10.0),
+                            child: Text(' Discrete Maths',style: TextStyle(fontSize: 12)),
+                          ),
+                        ],
+                      )
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     Container(
-                      width: 120,
+
                       height: 40,
                       decoration: Utils.decoration,
+                        child:Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left:8.0,right: 2),
+                              child: CircleAvatar(radius: 6.5,backgroundColor: Colors.blueAccent,),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right:10.0),
+                              child: Text(' Data Structures',style: TextStyle(fontSize: 12)),
+                            ),
+                          ],
+                        )
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     Container(
-                      width: 120,
+
                       height: 40,
                       decoration: Utils.decoration,
+                        child:Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left:8.0,right: 2),
+                              child: CircleAvatar(radius: 6.5,backgroundColor: Colors.orangeAccent,),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right:10.0),
+                              child: Text('Python',style: TextStyle(fontSize: 12)),
+                            ),
+                          ],
+                        )
                     ),
                   ],
                 )
