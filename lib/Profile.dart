@@ -36,7 +36,8 @@ class _UserProfileState extends State<UserProfile> {
     //  usrDetails['data']['user_data']['last_name'];
     //user = usrDetails['data']['user_data']['username'];
   }
-
+List<String> socials = ['you.png','ins.jpg','lin.jpg','git.png','dis.png'];
+  List<String> skill = ['jav.png','js.png','flu.png','css.jpg','go.jpg'];
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -94,13 +95,17 @@ class _UserProfileState extends State<UserProfile> {
             ),
             Container(
               width: screenWidth,
-              height: screenHeight * 0.1,
-              color: Colors.blue,
+              height: screenHeight * 0.16,
+              //color: Colors.blue,
               child: Center(
-                child: Container(
-                  width: 80,
-                  height: 80,
-                  color: Colors.yellow,
+                // child: Container(
+                //   width: 100,
+                //   height: 100,
+                //   color: Colors.yellow,
+                //   child: Image.asset('assets/temp/4.jpeg',fit: BoxFit.fill,),
+                // ),
+                child: CircleAvatar(
+                  radius: 70, backgroundImage: AssetImage('assets/temp/4.jpeg'),
                 ),
               ),
             ),
@@ -124,11 +129,11 @@ class _UserProfileState extends State<UserProfile> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  OutlinedButton(onPressed: () {}, child: Text("Follow")),
+                  OutlinedButton(onPressed: () {}, child: Text("Follow"),),
                   SizedBox(
-                    width: 20,
+                    width: 10,
                   ),
-                  OutlinedButton(onPressed: () {}, child: Text("Message")),
+                  OutlinedButton(onPressed: () {}, child: Text("Message"),),
                 ],
               ),
             ),
@@ -138,7 +143,7 @@ class _UserProfileState extends State<UserProfile> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20.0, right: 20),
+              padding: const EdgeInsets.only(left: 30.0, right: 20),
               child: Text(
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                   style: TextStyle(fontSize: 16)),
@@ -148,14 +153,17 @@ class _UserProfileState extends State<UserProfile> {
               child: Text("Skills",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ),
-            Row(
-              children: List.generate(
-                5,
-                (index) => Padding(
-                  padding: EdgeInsets.only(top: 10, left: 10),
-                  child: CircleAvatar(
-                    radius: 30,
-                    backgroundColor: Colors.blue,
+            Padding(
+              padding: const EdgeInsets.only(left:20.0),
+              child: Row(
+                children: List.generate(
+                  5,
+                  (index) => Padding(
+                    padding: EdgeInsets.only(top: 10, left: 7),
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage('assets/temp/${skill[index]}'),
+                    ),
                   ),
                 ),
               ),
@@ -165,14 +173,17 @@ class _UserProfileState extends State<UserProfile> {
               child: Text("Socials",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ),
-            Row(
-              children: List.generate(
-                4,
-                    (index) => Padding(
-                  padding: EdgeInsets.only(top: 10, left: 10),
-                  child: CircleAvatar(
-                    radius: 30,
-                    backgroundColor: Colors.blue,
+            Padding(
+              padding:const EdgeInsets.only(left:20.0),
+              child: Row(
+                children: List.generate(
+                  4,
+                      (index) => Padding(
+                    padding: EdgeInsets.only(top: 10, left: 10),
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage('assets/temp/${socials[index]}'),
+                    ),
                   ),
                 ),
               ),
@@ -182,14 +193,17 @@ class _UserProfileState extends State<UserProfile> {
               child: Text("Pages Owned",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ),
-            Row(
-              children: List.generate(
-                2,
-                    (index) => Padding(
-                  padding: EdgeInsets.only(top: 10, left: 10),
-                  child: CircleAvatar(
-                    radius: 30,
-                    backgroundColor: Colors.blue,
+            Padding(
+              padding: const EdgeInsets.only(left:20.0),
+              child: Row(
+                children: List.generate(
+                  2,
+                      (index) => Padding(
+                    padding: EdgeInsets.only(top: 10, left: 10),
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage('assets/temp/${skill[index]}'),
+                    ),
                   ),
                 ),
               ),

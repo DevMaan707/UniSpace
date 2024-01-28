@@ -75,6 +75,13 @@ class _ClassesState extends State<Classes> {
       'Handouts',
       'Assessments'
     ];
+    List<String> prof = [
+      '1.jpg',
+      '2.jpg',
+      '3.jpg',
+      '4.jpeg',
+      '5.jpeg','6.jpeg','7.jpeg'
+    ];
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -84,27 +91,42 @@ class _ClassesState extends State<Classes> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                color: Colors.blue,
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(25),
+                    bottomLeft: Radius.circular(25),
+                  ),
+                ),
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      SizedBox(
+                        height: 20,
+                      ),
                       Icon(
                         CupertinoIcons.back,
                         size: 30,
                       ),
+                      SizedBox(
+                        height: 20,
+                      ),
                       Text(
                         'Computer Science',
                         style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold),
+                            fontSize: 30, fontWeight: FontWeight.bold),
                       ),
                       Text(
                         'K',
                         style: TextStyle(
                           fontSize: 25,
                         ),
+                      ),
+                      SizedBox(
+                        height: 20,
                       ),
                       Text(
                         'Members',
@@ -113,15 +135,18 @@ class _ClassesState extends State<Classes> {
                       ),
                       Row(
                         children: List.generate(
-                          5,
+                          7,
                           (index) => Padding(
                             padding: EdgeInsets.only(top: 10, left: 5),
                             child: CircleAvatar(
                               radius: 20,
-                              backgroundColor: Colors.black,
+                              backgroundImage:AssetImage('assets/temp/${prof[index]}'),
                             ),
                           ),
                         ),
+                      ),
+                      SizedBox(
+                        height: 20,
                       ),
                     ],
                   ),
@@ -166,63 +191,90 @@ class _ClassesState extends State<Classes> {
               Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20.0, top: 20),
+                  padding: const EdgeInsets.only(left: 20.0, top: 30),
                   child: Text("Class Incharge",
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 ),
               ),
-              Row(
-                children: [
-                  Row(
-                    children: List.generate(
-                      1,
-                          (index) => Padding(
-                        padding: EdgeInsets.only(top: 10, left: 10),
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundColor: Colors.blue,
+              Padding(
+                padding: const EdgeInsets.only(left:20,top:10),
+                child: Row(
+                  children: [
+                    Row(
+                      children: List.generate(
+                        1,
+                        (index) => Padding(
+                          padding: EdgeInsets.only(top: 10, left: 10),
+                          child: CircleAvatar(
+                            radius: 30,
+                            backgroundImage:AssetImage('assets/temp/${prof[1]}'),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left:10.0),
-                        child: Text('Name',),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left:10.0),
-                        child: Text('Qualifications',),
-                      ),
-                    ],
-                  ),
-
-                ],
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: Text(
+                            'Name',
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: Text(
+                            'Qualifications',
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 20.0, top: 20),
+                padding: const EdgeInsets.only(left: 20.0, top: 30),
                 child: Text("Lecturers",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                    style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
               ),
-              Row(
-                children: List.generate(
-                  5,
-                      (index) => Padding(
-                    padding: EdgeInsets.only(top: 10, left: 5),
-                    child: CircleAvatar(
-                      radius: 25,
-                      backgroundColor: Colors.blue,
+              Padding(
+                padding: const EdgeInsets.only(left:25.0,top:10),
+                child: Row(
+                  children: List.generate(
+                    5,
+                    (index) => Padding(
+                      padding: EdgeInsets.only(top: 10, left: 5),
+                      child: CircleAvatar(
+                        radius: 25,
+                        backgroundImage:AssetImage('assets/temp/${prof[index+1]}'),
+                      ),
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 20.0, top: 20),
+                padding: const EdgeInsets.only(left: 20.0, top: 40),
+                child: Text("Deadlines",
+                    style:
+                    TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 40.0, top: 10),
+                child: Text("No deadlines as of now",
+                    style:
+                    TextStyle(fontSize: 18, ),),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0, top: 40),
                 child: Text("Todays Schedule",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                    style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              ),
+              SizedBox(
+                height: 150,
               ),
             ],
           ),
