@@ -1,9 +1,12 @@
+import 'package:unispace/Feed.dart';
+import 'package:unispace/utils.dart';
+
 import 'Announcements.dart';
+import 'Classes.dart';
 import 'Profile.dart';
 import 'piechart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'Menu.dart';
 import 'bottomNavBar.dart';
 import 'feedBadges.dart';
@@ -56,7 +59,6 @@ class _HomepageState extends State<Homepage> {
       ],
     );
   }
-
 
   Widget buildPage1() {
     return SingleChildScrollView(
@@ -206,23 +208,7 @@ class _HomepageState extends State<Homepage> {
                     Container(
                       width: 120,
                       height: 40,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.shade300,
-                            offset: const Offset(0.5, 0.5),
-                            blurRadius: 15,
-                            spreadRadius: 1,
-                          ),
-                          BoxShadow(
-                            color: Colors.grey.shade300,
-                            offset: const Offset(-0.5, -0.5),
-                            blurRadius: 15,
-                            spreadRadius: 1,
-                          )
-                        ],
-                      ),
+                      decoration: Utils.decoration,
                     ),
                     SizedBox(
                       height: 20,
@@ -230,23 +216,7 @@ class _HomepageState extends State<Homepage> {
                     Container(
                       width: 120,
                       height: 40,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.shade300,
-                            offset: const Offset(0.5, 0.5),
-                            blurRadius: 15,
-                            spreadRadius: 1,
-                          ),
-                          BoxShadow(
-                            color: Colors.grey.shade300,
-                            offset: const Offset(-0.5, -0.5),
-                            blurRadius: 15,
-                            spreadRadius: 1,
-                          )
-                        ],
-                      ),
+                      decoration: Utils.decoration,
                     ),
                     SizedBox(
                       height: 20,
@@ -254,28 +224,15 @@ class _HomepageState extends State<Homepage> {
                     Container(
                       width: 120,
                       height: 40,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.shade300,
-                            offset: const Offset(0.5, 0.5),
-                            blurRadius: 15,
-                            spreadRadius: 1,
-                          ),
-                          BoxShadow(
-                            color: Colors.grey.shade300,
-                            offset: const Offset(-0.5, -0.5),
-                            blurRadius: 15,
-                            spreadRadius: 1,
-                          )
-                        ],
-                      ),
+                      decoration: Utils.decoration,
                     ),
                   ],
                 )
               ],
             ),
+          ),
+          SizedBox(
+            height: 150,
           ),
         ],
       ),
@@ -284,21 +241,11 @@ class _HomepageState extends State<Homepage> {
 
   Widget buildPage2() {
     // Replace with your implementation for the second page
-    return Container(
-      color: Colors.green,
-      child: Center(
-        child: Text('Page 2'),
-      ),
-    );
+    return Feeds();
   }
 
   Widget buildPage3() {
     // Replace with your implementation for the third page
-    return Container(
-      color: Colors.red,
-      child: Center(
-        child: Text('Page 3'),
-      ),
-    );
+    return Classes();
   }
 }

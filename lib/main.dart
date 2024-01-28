@@ -43,7 +43,7 @@ class SplashState extends State<Splash> {
     var isLoggedIn =  sharedPref.getBool(LOGINSTATE);
     var JWT = sharedPref.getString(JWT_TOKEN);
     Timer(
-      Duration(seconds: 2),
+      Duration(seconds: 3),
           () {
         if (isLoggedIn != null) {
           if (isLoggedIn == true) {
@@ -65,23 +65,18 @@ class SplashState extends State<Splash> {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            width: 200 * fem,
-            height: 125 * fem,
-            child: Image.asset(
-              'assets/images/ui_logo1.png',
-              fit: BoxFit.cover,
+          Align(
+            alignment: Alignment.center,
+            child: Container(
+              width: 150 * fem,
+              height: 150 * fem,
+              child: Image.asset(
+                'assets/images/logo_try.png',
+                fit: BoxFit.fill,
+              ),
             ),
-          ),
-          const Center(
-            child: Text('AU CLASSROOM',
-              style: TextStyle(
-                fontFamily: 'BebasNeue',
-                fontSize: 40,
-                fontWeight: FontWeight.w600,
-              ),),
-
           ),
           Lottie.asset('assets/load_lottie.json',
               width: 100,

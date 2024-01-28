@@ -72,11 +72,133 @@ class _UserProfileState extends State<UserProfile> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Profile",
-          style: standardFontStyleBlackoriginal,
+        title: Center(
+          child: Padding(
+            padding: const EdgeInsets.only(right: 50.0),
+            child: Text(
+              "Profile",
+              style: standardFontStyleBlackoriginal,
+            ),
+          ),
         ),
         leading: Icon(CupertinoIcons.back),
+        toolbarHeight: 80.0,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 40,
+            ),
+            Container(
+              width: screenWidth,
+              height: screenHeight * 0.1,
+              color: Colors.blue,
+              child: Center(
+                child: Container(
+                  width: 80,
+                  height: 80,
+                  color: Colors.yellow,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                child: Text(
+                  "Aymaan",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                ),
+              ),
+            ),
+            Center(
+              child: Text(
+                "CSE-K",
+                style: TextStyle(fontSize: 12),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  OutlinedButton(onPressed: () {}, child: Text("Follow")),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  OutlinedButton(onPressed: () {}, child: Text("Message")),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: Text("Bio",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20),
+              child: Text(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                  style: TextStyle(fontSize: 16)),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, top: 20),
+              child: Text("Skills",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            ),
+            Row(
+              children: List.generate(
+                5,
+                (index) => Padding(
+                  padding: EdgeInsets.only(top: 10, left: 10),
+                  child: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Colors.blue,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, top: 20),
+              child: Text("Socials",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            ),
+            Row(
+              children: List.generate(
+                4,
+                    (index) => Padding(
+                  padding: EdgeInsets.only(top: 10, left: 10),
+                  child: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Colors.blue,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, top: 20),
+              child: Text("Pages Owned",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            ),
+            Row(
+              children: List.generate(
+                2,
+                    (index) => Padding(
+                  padding: EdgeInsets.only(top: 10, left: 10),
+                  child: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Colors.blue,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 150,
+            ),
+          ],
+        ),
       ),
     );
   }

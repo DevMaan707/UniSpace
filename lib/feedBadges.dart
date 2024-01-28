@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:unispace/utils.dart';
+
 class feedHomebadge extends StatefulWidget {
   const feedHomebadge({super.key});
 
@@ -7,6 +9,15 @@ class feedHomebadge extends StatefulWidget {
 }
 
 class _feedHomebadgeState extends State<feedHomebadge> {
+  List<String> prof = [
+    '1.jpg',
+    '2.jpg',
+    '3.jpg',
+    '4.jpeg',
+    '5.jpeg',
+    '6.jpeg',
+    '7.jpeg'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -15,27 +26,24 @@ class _feedHomebadgeState extends State<feedHomebadge> {
     return Container(
       width: screenWidth * 0.45,
       height: screenHeight * 0.2,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade300,
-            offset: const Offset(0.5, 0.5),
-            blurRadius: 15,
-            spreadRadius: 1,
-          ),
-          BoxShadow(
-            color: Colors.grey.shade300,
-            offset: const Offset(-0.5, -0.5),
-            blurRadius: 15,
-            spreadRadius: 1,
-          )
-        ],
-      ),
+      decoration: Utils.decorationRadiusSS,
       child: Column(
         children: [
-
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CircleAvatar(
+                radius: 20,
+                backgroundColor: Colors.blue,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [Text("Dummy 1"), Text("Anurag University")],
+              ),
+            ],
+          )
         ],
       ),
     );
